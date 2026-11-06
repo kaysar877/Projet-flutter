@@ -1,0 +1,31 @@
+import 'package:flutter/material.dart';
+import '../widgets/app_popup_menu_button.dart';
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Accueil'),
+        actions: const [AppPopupMenuButton(currentRoute: '/')],
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.home, size: 64),
+              const SizedBox(height: 16),
+              Text('Bienvenue à la page d\'accueil!', style: Theme.of(context).textTheme.headlineMedium),
+              const SizedBox(height: 8),
+              Text('Commencez votre navigation ici.', textAlign: TextAlign.center),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
